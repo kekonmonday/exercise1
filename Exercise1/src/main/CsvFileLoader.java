@@ -48,10 +48,11 @@ public class CsvFileLoader {
 		}
 
 		// Обработка файла
-		public CsvFile getCurrentFile() {
+		public CsvFile getCurrentCsvFile() {
+			CvsFileParser cvsFileParser = new CvsFileParser();
 			CsvFile csvFile = null;
 			try {
-				csvFile = new CsvFile(new File(path + "\\" + files.get(indexCurrentFile).getName()));
+				csvFile = cvsFileParser.parse(new File(path + "\\" + files.get(indexCurrentFile).getName()));
 			} catch (IOException e) {
 				e.printStackTrace();
 			}

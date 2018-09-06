@@ -19,7 +19,7 @@ public class ConsoleWorker {
 		csvFileContainer.getFiles().forEach(System.out::println);
 		int currentFile = scan.nextInt();
 		csvFileContainer.setindexCurrentFile(currentFile);
-		csvFile = csvFileContainer.getCurrentFile();
+		csvFile = csvFileContainer.getCurrentCsvFile();
 		try {
 			showFirstLevel();
 		} catch (IOException e) {
