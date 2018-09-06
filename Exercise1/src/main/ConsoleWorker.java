@@ -13,32 +13,14 @@ public class ConsoleWorker {
 
 	private ConsoleWorker() {
 		scan = new Scanner(System.in);
-		System.out.println("Введите путь к папке с файлами");
+		System.out.println("Р’РІРµРґРёС‚Рµ РїСѓС‚СЊ Рє РїР°РїРєРµ СЃ С„Р°Р№Р»Р°РјРё");
 		path = scan.nextLine();
 		showFiles();
 	}
 
-	public void showFiles() {
-		CsvFileLoader csvFileLoader = new CsvFileLoader(path);
-		CsvFileContainer csvFileContainer = csvFileLoader.getCsvFileContainer();
-		csvFileContainer.getFiles().forEach(System.out::println);
-		int currentFile = scan.nextInt();
-		csvFileContainer.setindexCurrentFile(currentFile);
-		csvFile = csvFileContainer.getCurrentCsvFile();
-		if (csvFile == null) {
-			System.out.println("Такого файла не существует, выберите другой файл!");
-			showFiles();
-		}
-		try {
-			showFirstLevel();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
 	public void showFirstLevel() throws IOException {
 		System.out.println(
-				"0 - Вывести весь файл\n1 - Вывести часть файла\n2 - Изменить переход\n3 - Изменить индекс текущего элемента\n4 - Выбрать другой файл\n5 - Выбрать элемент");
+				"0 - Р’С‹РІРµСЃС‚Рё РІРµСЃСЊ С„Р°Р№Р»\n1 - Р’С‹РІРµСЃС‚Рё С‡Р°СЃС‚СЊ С„Р°Р№Р»Р°\n2 - РР·РјРµРЅРёС‚СЊ РїРµСЂРµС…РѕРґ\n3 - РР·РјРµРЅРёС‚СЊ РёРЅРґРµРєСЃ С‚РµРєСѓС‰РµРіРѕ СЌР»РµРјРµРЅС‚Р°\n4 - Р’С‹Р±СЂР°С‚СЊ РґСЂСѓРіРѕР№ С„Р°Р№Р»\n5 - Р’С‹Р±СЂР°С‚СЊ СЌР»РµРјРµРЅС‚");
 		switch (scan.nextInt()) {
 		case 0: {
 			showLevel0();
@@ -56,11 +38,7 @@ public class ConsoleWorker {
 			showFiles();
 		}
 		case 5: {
-			System.out.println("Введите индекс элемента\n");
-			int index = scan.nextInt();
-			csvFile.showHeader();
-			System.out.println(csvFile.getItemByIndex(index) + "\n");
-			showFirstLevel();
+			showLevel5();
 		}
 		}
 	}
@@ -68,7 +46,7 @@ public class ConsoleWorker {
 	public void showLevel0() throws IOException {
 		System.out.println();
 		csvFile.show();
-		System.out.println("\nДля возвращения назад нажмите клавишу В");
+		System.out.println("\nР”Р»СЏ РІРѕР·РІСЂР°С‰РµРЅРёСЏ РЅР°Р·Р°Рґ РЅР°Р¶РјРёС‚Рµ РєР»Р°РІРёС€Сѓ Р’");
 		while (((char) System.in.read()) == 'b') {
 			showFirstLevel();
 		}
@@ -77,7 +55,7 @@ public class ConsoleWorker {
 	public void showLevel1() throws IOException {
 		System.out.println();
 		csvFile.showCurrentItems();
-		System.out.println("+ - Следующие элементы\n- - Прошлые элементы\nb - Назад");
+		System.out.println("+ - РЎР»РµРґСѓСЋС‰РёРµ СЌР»РµРјРµРЅС‚С‹\n- - РџСЂРѕС€Р»С‹Рµ СЌР»РµРјРµРЅС‚С‹\nb - РќР°Р·Р°Рґ");
 		int intKey;
 		while ((intKey = System.in.read()) != -1) {
 			switch ((char) intKey) {
@@ -96,16 +74,42 @@ public class ConsoleWorker {
 	}
 
 	public void showLevel2() throws IOException {
-		System.out.println("\nВведите новый переход");
+		System.out.println("\nР’РІРµРґРёС‚Рµ РЅРѕРІС‹Р№ РїРµСЂРµС…РѕРґ");
 		int newDifference = scan.nextInt();
 		csvFile.setDifference(newDifference);
 		showFirstLevel();
 	}
 
 	public void showLevel3() throws IOException {
-		System.out.println("\nВведите новое текущее значение");
+		System.out.println("\nР’РІРµРґРёС‚Рµ РЅРѕРІРѕРµ С‚РµРєСѓС‰РµРµ Р·РЅР°С‡РµРЅРёРµ");
 		int newCurrentItem = scan.nextInt();
 		csvFile.setCurrentItem(newCurrentItem);
+		showFirstLevel();
+	}
+
+	public void showFiles() {
+		CsvFileLoader csvFileLoader = new CsvFileLoader(path);
+		CsvFileContainer csvFileContainer = csvFileLoader.getCsvFileContainer();
+		csvFileContainer.getFiles().forEach(System.out::println);
+		int currentFile = scan.nextInt();
+		csvFileContainer.setIndexCurrentFile(currentFile);
+		csvFile = csvFileContainer.getCurrentCsvFile();
+		if (csvFile == null) {
+			System.out.println("РўР°РєРѕРіРѕ С„Р°Р№Р»Р° РЅРµ СЃСѓС‰РµСЃС‚РІСѓРµС‚, РІС‹Р±РµСЂРёС‚Рµ РґСЂСѓРіРѕР№ С„Р°Р№Р»!");
+			showFiles();
+		}
+		try {
+			showFirstLevel();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void showLevel5() throws IOException {
+		System.out.println("Р’РІРµРґРёС‚Рµ РёРЅРґРµРєСЃ СЌР»РµРјРµРЅС‚Р°\n");
+		int index = scan.nextInt();
+		csvFile.showHeader();
+		System.out.println(csvFile.getItemByIndex(index) + "\n");
 		showFirstLevel();
 	}
 

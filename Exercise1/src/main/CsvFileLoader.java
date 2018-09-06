@@ -39,15 +39,14 @@ public class CsvFileLoader {
 			this.indexCurrentFile = 0;
 		}
 
-		public int getindexCurrentFile() {
+		public int getIndexCurrentFile() {
 			return indexCurrentFile;
 		}
 
-		public void setindexCurrentFile(int currentFile) {
+		public void setIndexCurrentFile(int currentFile) {
 			this.indexCurrentFile = currentFile;
 		}
 
-		// Обработка файла
 		public CsvFile getCurrentCsvFile() {
 			CvsFileParser cvsFileParser = new CvsFileParser();
 			CsvFile csvFile = null;
