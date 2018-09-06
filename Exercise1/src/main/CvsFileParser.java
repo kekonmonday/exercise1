@@ -9,9 +9,8 @@ import java.util.ArrayList;
 public class CvsFileParser {
 
 	public CsvFile parse(File file) throws IOException {
-		if (!file.exists()) {
+		if (!file.exists())
 			return null;
-		}
 		ArrayList<Line> lines = new ArrayList<Line>();
 		BufferedReader reader = new BufferedReader(new FileReader(file));
 		String line;

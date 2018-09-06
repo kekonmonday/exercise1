@@ -8,18 +8,27 @@ import main.CsvFileLoader.CsvFileContainer;
 public class ConsoleWorker {
 
 	private final Scanner scan;
+	private final String path;
 	private CsvFile csvFile;
 
 	private ConsoleWorker() {
 		scan = new Scanner(System.in);
 		System.out.println("Введите путь к папке с файлами");
-		String path = scan.nextLine();
+		path = scan.nextLine();
+		showFiles();
+	}
+
+	public void showFiles() {
 		CsvFileLoader csvFileLoader = new CsvFileLoader(path);
 		CsvFileContainer csvFileContainer = csvFileLoader.getCsvFileContainer();
 		csvFileContainer.getFiles().forEach(System.out::println);
 		int currentFile = scan.nextInt();
 		csvFileContainer.setindexCurrentFile(currentFile);
 		csvFile = csvFileContainer.getCurrentCsvFile();
+		if (csvFile == null) {
+			System.out.println("Такого файла не существует, выберите другой файл!");
+			showFiles();
+		}
 		try {
 			showFirstLevel();
 		} catch (IOException e) {
@@ -29,7 +38,7 @@ public class ConsoleWorker {
 
 	public void showFirstLevel() throws IOException {
 		System.out.println(
-				"0 - Вывести весь файл\n1 - Вывести часть файла\n2 - Изменить переход\n3 - Изменить индекс текущего элемента");
+				"0 - Вывести весь файл\n1 - Вывести часть файла\n2 - Изменить переход\n3 - Изменить индекс текущего элемента\n4 - Выбрать другой файл\n5 - Выбрать элемент");
 		switch (scan.nextInt()) {
 		case 0: {
 			showLevel0();
@@ -42,6 +51,16 @@ public class ConsoleWorker {
 		}
 		case 3: {
 			showLevel3();
+		}
+		case 4: {
+			showFiles();
+		}
+		case 5: {
+			System.out.println("Введите индекс элемента\n");
+			int index = scan.nextInt();
+			csvFile.showHeader();
+			System.out.println(csvFile.getItemByIndex(index) + "\n");
+			showFirstLevel();
 		}
 		}
 	}

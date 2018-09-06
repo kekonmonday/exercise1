@@ -54,6 +54,10 @@ public class CsvFile {
 		System.out.println(header + "\n");
 	}
 
+	public Line getItemByIndex(int index) {
+		return lines.get(index);
+	}
+
 	public void showCurrentItems() {
 		showHeader();
 		for (int i = currentItem; i < currentItem + difference; i++) {
