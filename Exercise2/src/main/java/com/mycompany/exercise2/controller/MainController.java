@@ -47,11 +47,11 @@ public class MainController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         planetPanes = new ArrayList<Pane>();
         circles = new ArrayList<Circle>();
-        addStar(new Star(new Coordinate(pane.getPrefWidth() / 2, pane.getPrefHeight() / 2), 100000, "Солнце", new File("C:\\Users\\Влад\\Documents\\NetBeansProjects\\Exercise2\\src\\main\\resources\\image\\sun.png")));
-        Planet venera = new Planet(50000, "Венера", centerObject, 200, SpinningSpaceObject.RIGTH_SIDE, new File("C:\\Users\\Влад\\Documents\\NetBeansProjects\\Exercise2\\src\\main\\resources\\image\\venera.png"));
-        Planet mercury = new Planet(200000, "Меркурій", centerObject, 120, SpinningSpaceObject.RIGTH_SIDE, new File("C:\\Users\\Влад\\Documents\\NetBeansProjects\\Exercise2\\src\\main\\resources\\image\\mercury.png"));
-        Planet earth = new Planet(100000, "Земля", centerObject, 300, SpinningSpaceObject.LEFT_SIDE, new File("C:\\Users\\Влад\\Documents\\NetBeansProjects\\Exercise2\\src\\main\\resources\\image\\earth.png"));
-        Satellite moon = new Satellite(200000, "Луна", earth, 75, SpinningSpaceObject.LEFT_SIDE, new File("C:\\Users\\Влад\\Documents\\NetBeansProjects\\Exercise2\\src\\main\\resources\\image\\moon.png"));
+        addStar(new Star(new Coordinate(pane.getPrefWidth() / 2, pane.getPrefHeight() / 2), 100000, "Солнце", new File("src/main/resources/image/sun.png")));
+        Planet venera = new Planet(50000, "Венера", centerObject, 200, SpinningSpaceObject.RIGTH_SIDE, new File("src/main/resources/image/venera.png"));
+        Planet mercury = new Planet(200000, "Меркурій", centerObject, 120, SpinningSpaceObject.RIGTH_SIDE, new File("src/main/resources/image/mercury.png"));
+        Planet earth = new Planet(100000, "Земля", centerObject, 300, SpinningSpaceObject.LEFT_SIDE, new File("src/main/resources/image/earth.png"));
+        Satellite moon = new Satellite(200000, "Луна", earth, 75, SpinningSpaceObject.LEFT_SIDE, new File("src/main/resources/image/moon.png"));
         addSatelliteSystem(earth, moon);
         addPlanet(venera);
         addPlanet(mercury);
