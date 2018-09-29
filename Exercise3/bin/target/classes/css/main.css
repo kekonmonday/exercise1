@@ -1,0 +1,23 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 29.09.2018, 15:33:32
+    Author     : Влад
+*/
+
+.main_pane .motorway {
+    -fx-background-image : url("../image/road.jpg");
+    -fx-background-position: 0px 0px;
+    -fx-background-repeat: repeat-x;
+}
+
+.main_pane {
+    -fx-background-image : url("../image/grass.jpg");
+    -fx-background-position: 0px 0px;
+    -fx-background-repeat: repeat;
+}
+
+

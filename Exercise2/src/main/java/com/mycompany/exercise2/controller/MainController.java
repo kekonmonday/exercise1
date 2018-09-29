@@ -51,10 +51,12 @@ public class MainController implements Initializable {
         Planet venera = new Planet(50000, "Венера", centerObject, 200, SpinningSpaceObject.RIGTH_SIDE, new File("src/main/resources/image/venera.png"));
         Planet mercury = new Planet(200000, "Меркурій", centerObject, 120, SpinningSpaceObject.RIGTH_SIDE, new File("src/main/resources/image/mercury.png"));
         Planet earth = new Planet(100000, "Земля", centerObject, 300, SpinningSpaceObject.LEFT_SIDE, new File("src/main/resources/image/earth.png"));
+        //Planet mars = new Planet(140000, "Марс", centerObject, 420, SpinningSpaceObject.RIGTH_SIDE, new File("src/main/resources/image/mars.png"));
         Satellite moon = new Satellite(200000, "Луна", earth, 75, SpinningSpaceObject.LEFT_SIDE, new File("src/main/resources/image/moon.png"));
         addSatelliteSystem(earth, moon);
         addPlanet(venera);
         addPlanet(mercury);
+        //addPlanet(mars);
 
         timer = new Timer(true);
         speed = 50;
@@ -154,6 +156,7 @@ public class MainController implements Initializable {
                     SpaceObjectPane spaceObjectPane = (SpaceObjectPane) planetPanes.get(i);
                     Planet planet = (Planet) spaceObjectPane.getSpaceObject();
                     planet.next();
+                    System.out.println("-" + (planet.getCurrentPosition().getX() - spaceObjectPane.getImageView().getFitHeight() / 2 - spaceObjectPane.getLayoutX()));
                     spaceObjectPane.setTranslateX(planet.getCurrentPosition().getX() - spaceObjectPane.getImageView().getFitHeight() / 2 - spaceObjectPane.getLayoutX());
                     spaceObjectPane.setTranslateY(planet.getCurrentPosition().getY() - spaceObjectPane.getImageView().getFitWidth() / 2 - spaceObjectPane.getLayoutY());
                 } else if (planetPanes.get(i) instanceof SatelliteSystemPane) {
