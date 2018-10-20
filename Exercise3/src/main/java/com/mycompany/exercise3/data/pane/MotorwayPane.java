@@ -74,13 +74,13 @@ public class MotorwayPane extends Pane {
         this.motorway = motorway;
     }
 
-    public void addCarPane(CarPane carPane) {
+    public synchronized void addCarPane(CarPane carPane) {
         if (carPane != null) {
             carPanes.add(carPane);
         }
     }
 
-    public void removeCarPane() {
+    public synchronized void removeCarPane() {
         if (motorway.getSide() == Motorway.LEFT_SIDE) {
             carPanes.remove(0);
         } else if (motorway.getSide() == Motorway.RIGTH_SIDE) {
@@ -88,7 +88,7 @@ public class MotorwayPane extends Pane {
         }
     }
 
-    public void removeCarPane(CarPane carPane) {
+    public synchronized void removeCarPane(CarPane carPane) {
         if (carPane != null) {
             carPanes.remove(carPane);
         }

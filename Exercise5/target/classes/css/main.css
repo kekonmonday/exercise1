@@ -1,0 +1,10 @@
+.main {
+    
+}
+
+.note_pane {}
+
+
+.note_pane:hover {
+    -fx-background-color: #DCDCDC; 
+}

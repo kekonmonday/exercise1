@@ -6,7 +6,10 @@
 package com.mycompany.exercise3.data.pane;
 
 import com.mycompany.exercise3.data.Motorway;
+import java.io.File;
 import javafx.geometry.Insets;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
 
 /**
@@ -25,6 +28,13 @@ public class MotorwaySystemPane extends VBox{
         setPrefHeight(139 + 71);
         setLayoutX(0);
         setLayoutY(y);
+        ImageView zebraImageView = new ImageView(new Image(new File("src/main/resources/image/zebra.png").toURI().toString()));
+        zebraImageView.setLayoutX(750 - 50);
+        zebraImageView.setLayoutY(0);
+        zebraImageView.setFitHeight(139);
+        zebraImageView.setFitWidth(120);
+        zebraImageView.toFront();
+        motorway.getChildren().add(zebraImageView);
         getChildren().add(trafficLigthPane);
         getChildren().add(motorway);
     }

@@ -60,21 +60,27 @@ public class MainController implements Initializable {
         public void run() {
             ObservableList<CarPane> carPanes = msp.getMotorway().getCarPanes();
             if (carPanes.size() != 0) {
+                msp.getTrafficLigthPane().addTime();
+                if (!msp.getTrafficLigthPane().isGreen()) {
+                    msp.getTrafficLigthPane().addTimeRed();
+                }
+                System.err.println(msp.getTrafficLigthPane().isGreen());
                 for (int i = carPanes.size() - 1; i >= 0; i--) {
                     if (i != 0) {
                         if (Math.abs(carPanes.get(i).getCurrentX() - carPanes.get(i - 1).getCurrentX()) <= 240) {
-                            carPanes.get(i).getCar().setSpeed(carPanes.get(i - 1).getCar().getSpeed());
-                            carPanes.get(i).getCar().setOldSpeed(carPanes.get(i - 1).getCar().getOldSpeed());
+                            if (carPanes.get(i).getCar().getSpeed() != 0) {
+                                carPanes.get(i).getCar().setSpeed(carPanes.get(i - 1).getCar().getSpeed());
+                                carPanes.get(i).getCar().setOldSpeed(carPanes.get(i - 1).getCar().getOldSpeed());
+                            }
                         }
                     }
                     if (!msp.getTrafficLigthPane().isGreen()) {
-                        if (carPanes.get(i).getCurrentX() == msp.getTrafficLigthPane().getCurrentX() - 60) {
+                        if (Math.abs(carPanes.get(i).getCurrentX() - msp.getTrafficLigthPane().getCurrentX() + 130) <= 5) {
                             carPanes.get(i).getCar().setSpeed(0);
                         }
                     } else {
                         carPanes.get(i).getCar().setSpeed(carPanes.get(i).getCar().getOldSpeed());
                     }
-
                     carPanes.get(i).next();
                     carPanes.get(i).setTranslateX(carPanes.get(i).getCurrentX() - carPanes.get(i).getLayoutX());
                 }
@@ -84,16 +90,13 @@ public class MainController implements Initializable {
             } else {
                 msp.getMotorway().setTime();
                 msp.getMotorway().setRandomTime(r.nextInt(5) + 2);
-                if (msp.getTrafficLigthPane().isGreen() ||  msp.getTrafficLigthPane().getTimeRed() <= 4000) {
+                if (msp.getTrafficLigthPane().isGreen() || msp.getTrafficLigthPane().getTimeRed() <= 4000) {
                     Car car = new Car(Car.speeds[r.nextInt(3)], new File(Car.images[r.nextInt(4)]));
                     CarPane cp = new CarPane(msp.getMotorway(), car);
                     msp.getMotorway().addCarPane(cp);
                 }
             }
-            msp.getTrafficLigthPane().addTime();
-            if (!msp.getTrafficLigthPane().isGreen()) {
-                msp.getTrafficLigthPane().addTimeRed();
-            }
+
         }
 
     }

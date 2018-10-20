@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="603.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.exercise5.controller.ChangePaneConroller">
+   <children>
+      <ListView fx:id="tagList" layoutX="14.0" layoutY="158.0" prefHeight="288.0" prefWidth="276.0" />
+      <TextArea fx:id="contentText" layoutX="321.0" layoutY="158.0" prefHeight="364.0" prefWidth="265.0" />
+      <TextField fx:id="headlineText" layoutX="19.0" layoutY="99.0" prefHeight="25.0" prefWidth="563.0" />
+      <Label layoutX="172.0" layoutY="21.0" text="Изменение заметки">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="19.0" layoutY="72.0" text="Заголовок:">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Button layoutX="14.0" layoutY="458.0" mnemonicParsing="false" onAction="#deleteTag" prefHeight="25.0" prefWidth="276.0" text="Удалить тег" />
+      <TextField fx:id="newTagText" layoutX="14.0" layoutY="496.0" prefHeight="25.0" prefWidth="162.0" />
+      <Button layoutX="189.0" layoutY="496.0" mnemonicParsing="false" onAction="#addTag" prefHeight="25.0" prefWidth="101.0" text="Добавить тег" />
+      <Button layoutX="266.0" layoutY="545.0" mnemonicParsing="false" onAction="#changeNote" text="Изменить" />
+      <Label layoutX="321.0" layoutY="131.0" prefHeight="17.0" prefWidth="87.0" text="Контент:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
