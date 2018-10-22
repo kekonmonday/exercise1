@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.exercise4.controller.CityPaneController">
+   <children>
+      <ChoiceBox fx:id="cityChoiceBox" layoutX="53.0" layoutY="14.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="parameterChoiceBox" layoutX="220.0" layoutY="14.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="timeChoiceBox" layoutX="381.0" layoutY="14.0" prefWidth="150.0" />
+      <AreaChart fx:id="chart" layoutX="14.0" layoutY="56.0" prefHeight="575.0" prefWidth="802.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </AreaChart>
+   </children>
+</Pane>

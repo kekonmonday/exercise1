@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="651.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.exercise4.controller.TimePaneController">
+ <children>
+      <ChoiceBox fx:id="cityChoiceBox" layoutX="53.0" layoutY="14.0" prefWidth="150.0" />
+      <AreaChart fx:id="chart" layoutX="14.0" layoutY="56.0" prefHeight="575.0" prefWidth="802.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </AreaChart>
+      <DatePicker fx:id="fromDatePicker" layoutX="243.0" layoutY="14.0" />
+      <DatePicker fx:id="toDatePicker" layoutX="457.0" layoutY="14.0" />
+      <Label layoutX="222.0" layoutY="18.0" text="От" />
+      <Label layoutX="436.0" layoutY="18.0" text="До" />
+   </children>
+</Pane>

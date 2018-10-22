@@ -1,0 +1,84 @@
+.nav_button {
+    -fx-background-color: #fff;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-border-radius: 0;
+    -fx-border-color: #730d73;
+    -fx-border-width: 1px; 
+}
+
+.pane {
+    -fx-background-color: #fff;
+}
+
+.nav_button:click {
+    -fx-background-color: #901090;
+}
+
+.nav_button:hover {
+    -fx-background-color: #b414b4;
+    -fx-text-fill: #fff;
+}
+
+.choice-box {
+	-fx-background-color: #f393f3;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-font-family: "Arial" sans-serif;
+}
+
+.choice-box:hover {
+	-fx-background-color: #87CEFA;
+}
+
+
+.choice-box.arrow {
+	-fx-background-color: white;
+}
+
+
+.choice-box .list-view  {
+	-fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 8, 0.0 , 0 , 0 );
+}
+
+.choice-box .scroll-bar:vertical{
+    -fx-background-color:transparent;
+}
+
+.choice-box .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: #4169E0;
+}
+
+.choice-box .scroll-bar:vertical .increment-arrow {
+    -fx-background-color: #4169E0;
+}
+
+.choice-box .increment-button,.combo-box .decrement-button {
+    -fx-background-color: transparent;
+    -fx-border-width: 1px;
+    -fx-border-color: #4169E0;
+}
+
+.choice-box .list-view .list-cell:selected {
+    -fx-text-fill: white;
+    -fx-background-color: #4169E0;
+}
+
+.choice-box .cell:selected {
+    -fx-text-fill: white;
+}
+
+.choice-box .scroll-bar:vertical .track{
+    -fx-background-color: transparent;
+    -fx-border-width: 1px;
+    -fx-border-color: #4169E0;
+    -fx-background-radius: 0em;
+}
+
+.choice-box .scroll-bar:vertical .thumb {
+    -fx-background-color: #4169E0;
+    -fx-background-radius: 5em;
+}
