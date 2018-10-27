@@ -30,7 +30,7 @@ public class Main extends Application {
     }
     
     public static void main(String... args) {
-       //LoaderDataTimer ldt = new LoaderDataTimer();
+       LoaderDataTimer ldt = new LoaderDataTimer();
         launch(args);          
     }
     

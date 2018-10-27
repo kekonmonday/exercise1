@@ -58,11 +58,11 @@ public class CityPaneController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        /*try {
+        try {
             Thread.sleep(5000);
         } catch (InterruptedException ex) {
             Logger.getLogger(CityPaneController.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
+        }
         timeChoiceBox.getItems().addAll("за день", "за неделю", "за месяц");
         try {
             cities = cityDao.get();

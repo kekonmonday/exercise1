@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="190.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.exercise6.controller.CreatePaneController">
+   <children>
+      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#addPlayer" prefHeight="25.0" prefWidth="170.0" text="Добавить игрока" />
+      <Button layoutX="14.0" layoutY="82.0" mnemonicParsing="false" onAction="#seeNoteStan" prefHeight="25.0" prefWidth="170.0" text="Просмотреть нотный ряд" />
+      <ChoiceBox fx:id="players" layoutX="14.0" layoutY="147.0" prefHeight="25.0" prefWidth="170.0" />
+      <Button layoutX="196.0" layoutY="14.0" mnemonicParsing="false" onAction="#playSound" prefHeight="25.0" prefWidth="147.0" text="Проиграть" />
+      <Button layoutX="196.0" layoutY="83.0" mnemonicParsing="false" onAction="#saveSound" prefHeight="25.0" prefWidth="147.0" text="Сохранить" />
+   </children>
+</Pane>

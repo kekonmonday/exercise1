@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="190.0" prefWidth="357.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.exercise6.controller.MainController" >
+   <children>
+      <Button layoutX="75.0" layoutY="38.0" mnemonicParsing="false" onAction="#create" prefHeight="43.0" prefWidth="207.0" text="Создать" />
+      <Button layoutX="75.0" layoutY="110.0" mnemonicParsing="false" onAction="#open" prefHeight="43.0" prefWidth="207.0" text="Открыть" />
+   </children>
+</Pane>

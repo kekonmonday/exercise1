@@ -93,7 +93,7 @@ public class LoaderTimerTask extends TimerTask {
                         JSONObject measurement = measurements.getJSONObject(j);
                         String parameter = measurement.getString("parameter");
                         double valueMeasurement = measurement.getDouble("value");
-                        //System.out.println(valueMeasurement + "");
+                        System.out.println(valueMeasurement + "");
                         values.get(parameter).addToValue(valueMeasurement);
                         values.get(parameter).incCounter();
                     }
